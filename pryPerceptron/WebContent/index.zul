@@ -6,7 +6,7 @@
 	<window border="none" width="100%" height="100%" apply="com.perceptron.ctrl.IndexCtrl">
 		<borderlayout width="100%" height="100%">
 			<north size="55px" border="none">
-				<h:nav class="navbar navbar-inverse">
+				<h:nav class="navbar navbar-inverse navbar-fixed-top">
 					<div class="container-fluid">
 						<div class="navbar-header">
 							<a class="navbar-brand" href="#" style="color:white;">Perceptrón Simple</a>
@@ -20,64 +20,49 @@
 				</h:nav>
 			</north>
 			<center border="none">
-				<div width="100%" height="100%" style="margin:auto; border-style:ridge; border-radius:5px;" class="container">
-					<div class="row">
-						<div class="col-xs-6">
-							<div class="form-group">
-								<h:label for="intPrimerEntrada">Entrada 1:</h:label>
-								<intbox id="intPrimerEntrada" maxlength="1" class="form-control" />
-							</div>
-							<div class="form-group">
-								<h:label for="intSegundaEntrada">Entrada 2:</h:label>
-								<intbox id="intSegundaEntrada" maxlength="1" class="form-control" />
-							</div>
-							<div class="form-group">
-								<h:label for="rdgCompuerta">Compuerta:</h:label>
-								<div class="radio">
-									<radio label="AND"></radio>
-								</div>
-								<div class="radio">
-									<radio label="OR"></radio>
-								</div>	
-							</div>
-							
-<!-- 							<grid> -->
-<!-- 								<columns> -->
-<!-- 									<column width="40%" /> -->
-<!-- 									<column width="60%" /> -->
-<!-- 								</columns> -->
-<!-- 								<rows> -->
-<!-- 									<row> -->
-<!-- 										<label value="Entrada 1:" /> -->
-<!-- 										<intbox id="intPrimerEntrada1" maxlength="1" width="150px" /> -->
-<!-- 									</row> -->
-<!-- 									<row> -->
-<!-- 										<label value="Entrada 2:" /> -->
-<!-- 										<intbox id="intSegundaEntrada2" maxlength="1" width="150px" /> -->
-<!-- 									</row> -->
-<!-- 									<row> -->
-<!-- 										<label value="Compuerta:" /> -->
-<!-- 										<radiogroup orient="horizontal"> -->
-<!-- 											<radio label=" AND" /> -->
-<!-- 											<separator width="25px" orient="vertical" /> -->
-<!-- 											<radio label=" OR" /> -->
-<!-- 										</radiogroup> -->
-<!-- 									</row> -->
-<!-- 									<row spans="2"> -->
-<!-- 										<div width="100%" align="center"> -->
-<!-- 											<button id="btnEntrenar" label="Entrenar" zclass="btn" style="margin:auto;" /> -->
-<!-- 											<button id="btnProbar" label="Prueba" zclass="btn" style="margin:auto;" /> -->
-<!-- 										</div> -->
-<!-- 									</row> -->
-<!-- 								</rows> -->
-<!-- 							</grid> -->
-						</div>
-						<div class="col-xs-6">
-							<image src="/img/imgs1.png" width="50%" height="100%" />
-						</div>
-					</div>
-				</div>
+				<h:div width="100%" height="100%" style="margin:auto; border-style:ridge; border-radius:5px;" class="container">
+					<h:br/>
+					<h:div class="row">
+						<h:div class="col-xs-5">
+							<h:form class="form-horizontal" role="form">
+								<h:div class="form-group">
+									<h:label for="intPrimerEntrada" class="col-sm-4">Entrada 1:</h:label>
+									<h:div class="col-sm-8">
+										<intbox id="intPrimerEntrada" maxlength="1" class="form-control input-sm" />
+									</h:div>
+								</h:div>
+								<h:div class="form-group">
+									<h:label for="intSegundaEntrada" class="col-sm-4">Entrada 2:</h:label>
+									<h:div class="col-sm-8">
+										<intbox id="intSegundaEntrada" maxlength="1" class="form-control input-sm" />
+									</h:div>
+								</h:div>
+								<h:div class="form-group">
+									<h:label for="rdgCompuerta" sclass="col-sm-4">Compuerta:</h:label>
+									<h:div class="col-sm-8">
+										<listbox id="listCompuerta" mold="select" sclass="form-control input-sm">
+											<listitem label="AND"/>
+											<listitem label="OR"/>
+										</listbox>
+									</h:div>
+								</h:div>
+								<h:div class="form-group" style="text-align:center">
+<!-- 									<button id="btnEntrenar" sclass="btn btn-default col-sm-4" label="Entrenar" /> -->
+									<button id="btnProbar" sclass="btn btn-default" label="Probar" />
+								</h:div>
+							</h:form>
+						</h:div>
+						<h:div class="col-xs-7">
+							<image src="/img/img1.png" width="100%" height="100%" />
+						</h:div>
+					</h:div>
+					<h:br/>
+				</h:div>
 			</center>
+			<south size="32px" border="none">
+				<h:nav class="navbar navbar-inverse navbar-fixed-bottom">
+				</h:nav>
+			</south>
 		</borderlayout>
 	</window>
 </zk>

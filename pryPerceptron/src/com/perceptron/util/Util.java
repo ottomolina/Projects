@@ -26,6 +26,10 @@ public class Util {
 		Messagebox.show(p_mensaje, "Información", Messagebox.OK, Messagebox.INFORMATION);
 	}
 	
+	public static void mostrarAdvertencia(String p_mensaje){
+		Messagebox.show(p_mensaje, "Advertencia", Messagebox.OK, Messagebox.EXCLAMATION);
+	}
+	
 	public static void mensajeInconveniente(){
 		Messagebox.show("Ha ocurrido un inconveniente, si el problema persiste consulte a su administrador.", 
 				"Información", Messagebox.OK, Messagebox.INFORMATION);
