@@ -28,13 +28,13 @@
 								<h:div class="form-group">
 									<h:label for="intPrimerEntrada" class="col-sm-4">Entrada 1:</h:label>
 									<h:div class="col-sm-8">
-										<intbox id="intPrimerEntrada" maxlength="1" class="form-control input-sm" />
+										<intbox id="intPrimerEntrada" maxlength="2" class="form-control input-sm" />
 									</h:div>
 								</h:div>
 								<h:div class="form-group">
 									<h:label for="intSegundaEntrada" class="col-sm-4">Entrada 2:</h:label>
 									<h:div class="col-sm-8">
-										<intbox id="intSegundaEntrada" maxlength="1" class="form-control input-sm" />
+										<intbox id="intSegundaEntrada" maxlength="2" class="form-control input-sm" />
 									</h:div>
 								</h:div>
 								<h:div class="form-group">
@@ -47,7 +47,7 @@
 									</h:div>
 								</h:div>
 								<h:div class="form-group" style="text-align:center">
-<!-- 									<button id="btnEntrenar" sclass="btn btn-default col-sm-4" label="Entrenar" /> -->
+ 									<button id="btnEntrenar" sclass="btn btn-default" label="Entrenar" />
 									<button id="btnProbar" sclass="btn btn-default" label="Probar" />
 								</h:div>
 							</h:form>
@@ -60,7 +60,14 @@
 				</h:div>
 			</center>
 			<south size="32px" border="none">
-				<h:nav class="navbar navbar-inverse navbar-fixed-bottom">
+				<h:nav class="navbar navbar-inverse navbar-fixed-bottom" style="background-color:green">
+					<div class="container-fluid">
+						<h:ul class="nav navbar-nav navbar-right">
+							<h:li>
+								<a href="#"><label style="color:white;" value="Proyecto educativo sin fines de lucro" /></a>
+							</h:li>
+						</h:ul>
+					</div>
 				</h:nav>
 			</south>
 		</borderlayout>

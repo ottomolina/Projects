@@ -17,6 +17,7 @@ public class IndexCtrl extends GenericForwardComposer<Component> {
 	Intbox intPrimerEntrada;
 	Intbox intSegundaEntrada;
 	Listbox listCompuerta;
+	private boolean entrena;
 	
 	public void doAfterCompose(Component comp) {
 		try {
@@ -27,8 +28,19 @@ public class IndexCtrl extends GenericForwardComposer<Component> {
 		}
 		lblFecha.setValue(Util.obtieneFecha(null));
 		perceptron = new Perceptron();
+		entrena = false;
 	}
 	
+	public void onClick$btnEntrenar(){
+		if(listCompuerta.getSelectedItem() == null){
+			Util.mostrarAdvertencia("Por favor seleccione la compuerta.");
+			return;
+		}
+		perceptron.definirSalidasDeseadas(listCompuerta.getSelectedItem().getLabel().toLowerCase());
+		perceptron.entrenar();
+		entrena = true;
+		Util.mostrarMensaje("Red entrenada");
+	}
 	
 	public void onClick$btnProbar() {
 		if(intPrimerEntrada.getValue() == null) {
@@ -43,10 +55,10 @@ public class IndexCtrl extends GenericForwardComposer<Component> {
 			Util.mostrarAdvertencia("Por favor seleccione la compuerta.");
 			return;
 		}
-		perceptron.definirSalidasDeseadas(listCompuerta.getSelectedItem().getLabel().toLowerCase());
 		
-		if(!perceptron.entrenar()) {
-			Util.mostrarAdvertencia("Ocurrió un error al entrenar la red, por favor verifique.");
+		
+		if(!entrena) {
+			Util.mostrarAdvertencia("Primero debe entrenar la red.");
 			return;
 		}
 		
@@ -55,6 +67,7 @@ public class IndexCtrl extends GenericForwardComposer<Component> {
 		float result = perceptron.testeo(x1, x2);
 		
 		Util.mostrarMensaje("Resultado del cálculo: " + String.valueOf(result));
+//		entrena = false;
 	}
 	
 }
